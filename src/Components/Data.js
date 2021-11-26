@@ -28,7 +28,7 @@ function Data(){
             </Navbar>
             <span >
                 <p className="s-1">Content Type &nbsp;&nbsp;&nbsp; application/json</p>
-                <p className="s-1" >{dataIn}</p>
+                <p className="s-1" style={{ fontSize:"20px"}}>{dataIn}</p>
             </span>
             <div className="bg">
             <Button variant="dark" className="addbutton" onClick={()=>addPair()}>&nbsp; ADD &nbsp;</Button>

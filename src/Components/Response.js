@@ -21,6 +21,9 @@ export const Response = () => {
                 </Nav>
                 </Container>
             </Navbar>
+            <div>
+                
+            </div>
         </div>
     )
 }

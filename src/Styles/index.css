@@ -17,7 +17,7 @@ code {
   margin-right: 40px;
 }
 
-.w-7{
+.w-9{
   width:90% !important;
 }
 
@@ -27,4 +27,38 @@ code {
 
 .drop{
   width:100px ;
+}
+
+.s-1{
+  margin-top:15px;
+}
+
+.w-8{
+  margin-left: 100px;
+  width:80%;
+  display: flex;
+ 
+}
+
+.m-20{
+  margin-top: 5px !important;
+}
+
+.bg{
+  height:200px;
+  background-color: #F8F9FA;
+  overflow-y: scroll;
+  border:1px solid lightblue;
+}
+
+.addbutton{
+  margin-left: 1150px;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.deleteButton{
+  margin-top:5px;
+  height:40px;
+  margin-left: 40px;
 }

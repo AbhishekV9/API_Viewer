@@ -19,7 +19,7 @@ export const Header = () => {
                 <Dropdown.Item onClick={()=>setmethod("PATCH")}>PATCH</Dropdown.Item>
                 <Dropdown.Item onClick={()=>setmethod("DELETE")}>DELETE</Dropdown.Item>
             </DropdownButton>
-            <InputGroup className="mb-3 w-7 " >
+            <InputGroup className="mb-3 w-9 " >
                 <FormControl
                 placeholder="https://example.com"
                 aria-label="Recipient's username"
@@ -28,7 +28,7 @@ export const Header = () => {
                 onChange={(e)=>seturl(e.target.value)}
                 />
                 <Button variant="primary" id="button-addon2" onClick={()=>handleClick()}>
-                Button
+                SEND&nbsp;&nbsp;
                 </Button>
             </InputGroup>
         </div>

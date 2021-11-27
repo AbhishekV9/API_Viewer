@@ -47,7 +47,6 @@ code {
 .bg{
   height:200px;
   background-color: #F8F9FA;
-  overflow-y: scroll;
   border:1px solid lightblue;
 }
 
@@ -62,4 +61,12 @@ code {
   font-size:18px;
   margin-top:20px;
   margin-left:100px;
+}
+
+.Response{
+  margin-top:20px;
+  background-color: #F8F9FA;
+  height:80px;
+  color:darkblue;
+  overflow-y: scroll;
 }

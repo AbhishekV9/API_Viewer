@@ -5,7 +5,6 @@ import { addPostBody } from "../Actions";
  
 function Data(props){
     const dispatch = useDispatch()
-    const [dataIn, setdataIn] = useState("Query Params");
     const [active, setActive] = useState('default');
     const [keys, setkeys] = useState("")
     const [values, setValues] = useState("")
@@ -23,17 +22,17 @@ function Data(props){
              onSelect={(selectedKey) => setActive(selectedKey)}
             >
                 <Container>
+                <Navbar.Brand eventKey="link-2" >Body</Navbar.Brand>
                 <Nav className="me-auto">
-                <Nav.Link eventKey="default" onClick={()=>setdataIn("Query Params")}>Params</Nav.Link>
-                <Nav.Link eventKey="link-1" onClick={()=>setdataIn("Headers")}>Headers</Nav.Link>
-                <Nav.Link eventKey="link-2" onClick={()=>setdataIn("Body")}>Body</Nav.Link>
-                <Nav.Link eventKey="link-3" onClick={()=>setdataIn("Authorization")}>Authorization</Nav.Link>
+                <Nav.Link  eventKey="disabled" disabled >Params</Nav.Link>
+                <Nav.Link  eventKey="disabled" disabled >Headers</Nav.Link>
+                <Nav.Link  eventKey="disabled" disabled >Authorization</Nav.Link>
                 </Nav>
                 </Container>
             </Navbar>
             <span >
                 <p className="s-1">Content Type &nbsp;&nbsp;&nbsp; application/json</p>
-                <p className="s-1" style={{ fontSize:"20px"}}>{dataIn}</p>
+                <p className="s-1" style={{ fontSize:"20px"}}>Body</p>
             </span>
             <div className="bg">
                 {props.showBody && 
@@ -47,7 +46,7 @@ function Data(props){
                         <FormControl aria-label="Last name" className="m-20" name="value" value={values} onChange={(e)=>setValues(e.target.value)} />
                     </InputGroup>                   
                     </div>
-                    <p className="des">You Can Add Multiple Key Value Pairs By clicking on Add Button</p>
+                    <p className="des">You can add key value pair in Body by clicking Add button and you can Add Multiple key value pairs</p>
                 </div>
                 }
             </div>

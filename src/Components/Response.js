@@ -23,7 +23,7 @@ export const Response = () => {
                 </Nav>
                 </Container>
             </Navbar>
-            <div>
+            <div className="Response">
                 {JSON.stringify(response)}
             </div>
         </div>

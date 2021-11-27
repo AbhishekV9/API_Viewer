@@ -7,17 +7,21 @@ import 'react-json-pretty/themes/monikai.css';
 function App() {
 
   const [showbody, setshowbody] = useState(false);
+  const [success, setsuccess] = useState("");
 
   const handleformDisplay=(value)=>{
-    console.log(value)
     setshowbody(value);
+  }
+
+  const handleSuccess=(value)=>{
+    setsuccess(value)
   }
   
   return (
     <div className="App">
-      <Header handleformDisplay={handleformDisplay} />
+      <Header handleformDisplay={handleformDisplay}  handleSuccess={handleSuccess}/>
       <Data showBody={showbody}/>
-      <Response/>
+      <Response success={success}/>
     </div>
   );
 }

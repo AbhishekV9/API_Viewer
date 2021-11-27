@@ -43,11 +43,13 @@ const Header = (props) => {
                     })
                     .then(res=>res.json())
                     .then(data=>{
-                      dispatch(saveResponse(data));  
+                      dispatch(saveResponse(data)); 
+                      props.handleSuccess("Success") ;
                     })
                     .catch((err)=>{
                         console.log(err);
-                        dispatch(saveResponse(err))
+                        dispatch(saveResponse(err));
+                        props.handleSuccess("Error") ;
                     })
                     return;  
             }
@@ -55,9 +57,12 @@ const Header = (props) => {
             .then(res=>res.json())
             .then(data=>{
                 dispatch(saveResponse(data))
+                props.handleSuccess("Success") ;
             }).catch((err)=>{
                 console.log(err)
                 dispatch(saveResponse(err))
+                props.handleSuccess("Error") 
+                console.log("hi")
             })
         }else{
             alert("Please Enter a valid url")

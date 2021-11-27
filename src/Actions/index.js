@@ -1,4 +1,8 @@
-import { CHANGE_METHOD, EMPTY_BODY, POST_BODY } from "./actionTypes";
+import { CHANGE_METHOD,
+     EMPTY_BODY,
+      POST_BODY,
+      SAVE_RESPONSE
+     } from "./actionTypes";
 
 
 export function changeMethod(method){
@@ -22,3 +26,9 @@ export function emptyBody(){
     }
 }
 
+export function saveResponse(response){
+    return{
+        type:SAVE_RESPONSE,
+        response
+    }
+}

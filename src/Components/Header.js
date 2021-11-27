@@ -1,20 +1,52 @@
 import React,{useState} from 'react';
 import { DropdownButton, Dropdown, InputGroup, FormControl, Button } from 'react-bootstrap';
-import { changeMethod,emptyBody} from "../Actions";
-import { useDispatch } from 'react-redux'
+import { changeMethod,emptyBody, saveResponse} from "../Actions";
+import { useDispatch,connect } from 'react-redux'
 
-export const Header = (props) => {
+const Header = (props) => {
     const dispatch = useDispatch()
     const [method, setmethod] = useState("GET");
     const [url, seturl] = useState("")
 
+    function isValidURL(str) {
+        var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+      return !!pattern.test(str);
+      };
     
-
     const handleClick=(method,value)=>{
         setmethod(method);
         dispatch(emptyBody())
         props.handleformDisplay(value);
         dispatch(changeMethod(method));
+    }
+
+    const handleSend=()=>{
+        if(url===""){
+            alert("please Enter a Valid url")
+            return
+        }
+        const isValid=isValidURL(url);
+        if(isValid){
+            if(method!=="GET"){
+
+            }
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=>{
+                dispatch(saveResponse(data))
+            }).catch((err)=>{
+                console.log(err)
+                dispatch(saveResponse(err))
+            })
+        }else{
+            alert("Please Enter a valid url")
+
+        }
     }
   
     return (
@@ -35,7 +67,7 @@ export const Header = (props) => {
                 value={url}
                 onChange={(e)=>seturl(e.target.value)}
                 />
-                <Button variant="primary" id="button-addon2" >
+                <Button variant="primary" id="button-addon2" onClick={()=>handleSend()}>
                 SEND&nbsp;&nbsp;
                 </Button>
             </InputGroup>
@@ -43,3 +75,14 @@ export const Header = (props) => {
         </>
     )
 }
+
+function mapStatetoprops(state){
+    return{
+      postState:state.postState
+    }
+  }
+  
+
+  const connectedComponent=connect(mapStatetoprops)(Header);
+  
+  export default connectedComponent;

@@ -2,6 +2,7 @@ import  Header  from "./Header";
 import Data from "./Data";
 import { Response } from "./Response";
 import { useState } from "react";
+import 'react-json-pretty/themes/monikai.css';
 
 function App() {
 

@@ -36,9 +36,9 @@ const Header = (props) => {
             if(method!=="GET"){
                     fetch(url,{
                         method:method,
-                        body: JSON.stringify({
-                            formdata:props.postState
-                        }),
+                        body: JSON.stringify(
+                            props.postState
+                        ),
                         headers:{ 'Content-Type': 'application/json' },
                     })
                     .then(res=>res.json())

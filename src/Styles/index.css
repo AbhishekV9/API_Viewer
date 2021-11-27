@@ -11,62 +11,61 @@ code {
     monospace;
 }
 
-.App{
+.App {
   margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
 }
 
-.w-9{
-  width:90% !important;
+.w-9 {
+  width: 90% !important;
 }
 
-.header{
+.header {
   display: flex;
 }
 
-.drop{
-  width:100px ;
+.drop {
+  width: 100px;
 }
 
-.s-1{
-  margin-top:15px;
+.s-1 {
+  margin-top: 15px;
 }
 
-.w-8{
-  margin-left: 100px;
-  width:80%;
-  display: flex;
- 
+.w-8 {
+  /* margin-left: 100px; */
+  width: 80%;
+  /* display: flex; */
 }
 
-.m-20{
+.m-20 {
   margin-top: 5px !important;
 }
 
-.bg{
-  height:200px;
-  background-color: #F8F9FA;
-  border:1px solid lightblue;
+.bg {
+  height: 150px;
+  background-color: #f8f9fa;
+  border: 1px solid lightblue;
 }
 
-.addButton{
-  margin-left: 1150px;
-  margin-top:20px;
-  margin-bottom:10px;
+.addButton {
+  
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.des{
-  color:darkslategray;
-  font-size:18px;
-  margin-top:20px;
-  margin-left:100px;
+.des {
+  color: darkslategray;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 100px;
 }
 
-.Response{
-  margin-top:20px;
-  background-color: #F8F9FA;
-  height:80px;
-  color:darkblue;
+.Response {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  height: 200px;
+  color: darkblue;
   overflow-y: scroll;
 }

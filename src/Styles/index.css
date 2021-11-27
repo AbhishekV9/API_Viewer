@@ -51,15 +51,15 @@ code {
   border:1px solid lightblue;
 }
 
-.addbutton{
+.addButton{
   margin-left: 1150px;
   margin-top:20px;
   margin-bottom:10px;
 }
 
-.deleteButton{
-  margin-top:5px;
-  height:40px;
-  margin-left: 40px;
- 
+.des{
+  color:darkslategray;
+  font-size:18px;
+  margin-top:20px;
+  margin-left:100px;
 }

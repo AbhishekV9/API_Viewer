@@ -2,12 +2,13 @@ import React from 'react';
 import { Navbar,Nav,Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 export const Response = () => {
-    const response=useSelector(state=>JSON.stringify(state.response));
+    const response=useSelector(state=>state.response);
+    console.log(response);
     return (
         <div>
             <div style={{ fontSize:"20px"}}>
                 <span>
-                    Status:{response.status}
+                    Status:&nbsp;&nbsp;{response.status}
                 </span>
                 <span style={{ marginLeft:"100px"}}>
                     Time:
@@ -23,7 +24,7 @@ export const Response = () => {
                 </Container>
             </Navbar>
             <div>
-                {response.length > 2 ? response:null}
+                {JSON.stringify(response)}
             </div>
         </div>
     )

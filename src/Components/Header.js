@@ -32,8 +32,24 @@ const Header = (props) => {
         }
         const isValid=isValidURL(url);
         if(isValid){
+            dispatch(emptyBody())
             if(method!=="GET"){
-
+                    fetch(url,{
+                        method:method,
+                        body: JSON.stringify({
+                            formdata:props.postState
+                        }),
+                        headers:{ 'Content-Type': 'application/json' },
+                    })
+                    .then(res=>res.json())
+                    .then(data=>{
+                      dispatch(saveResponse(data));  
+                    })
+                    .catch((err)=>{
+                        console.log(err);
+                        dispatch(saveResponse(err))
+                    })
+                    return;  
             }
             fetch(url)
             .then(res=>res.json())
@@ -56,7 +72,7 @@ const Header = (props) => {
                 <Dropdown.Item onClick={()=>handleClick('GET',false)}>GET</Dropdown.Item>
                 <Dropdown.Item onClick={()=>handleClick('POST',true)}>POST</Dropdown.Item>
                 <Dropdown.Item onClick={()=>handleClick('PUT',true)}>PUT</Dropdown.Item>
-                {/* //<Dropdown.Item onClick={()=>setmethod("PATCH")}>PATCH</Dropdown.Item> */}
+                <Dropdown.Item onClick={()=>handleClick('PATCH',true)}>PATCH</Dropdown.Item>
                 <Dropdown.Item onClick={()=>handleClick('DELETE',true)}>DELETE</Dropdown.Item>
             </DropdownButton>
             <InputGroup className="mb-3 w-9 " >

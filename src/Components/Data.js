@@ -9,9 +9,12 @@ function Data(props){
     const [active, setActive] = useState('default');
     const [keys, setkeys] = useState("")
     const [values, setValues] = useState("")
-    console.log(keys,values);
 
-    
+    const handleAdd=()=>{
+        dispatch(addPostBody(keys,values));
+        setkeys("")
+        setValues("");
+    }
     return(
         
         <div>
@@ -34,15 +37,18 @@ function Data(props){
             </span>
             <div className="bg">
                 {props.showBody && 
+                <div>
+                    <Button onClick={()=>handleAdd()} variant="dark" className="addButton"> &nbsp; &nbsp;Add &nbsp; &nbsp;</Button>
                     <div className="w-8" >
-                    <button onClick={()=>dispatch(addPostBody(keys,values))}>addd</button>
                     <InputGroup className="mb-3">
                         <InputGroup.Text className="m-20">Key</InputGroup.Text>
-                        <FormControl aria-label="First name" className="m-20" name="key"  onChange={(e)=>setkeys(e.target.value)}/>
+                        <FormControl aria-label="First name" className="m-20" name="key" value={keys} onChange={(e)=>setkeys(e.target.value)}/>
                         <InputGroup.Text className="m-20"  >Value</InputGroup.Text>
-                        <FormControl aria-label="Last name" className="m-20" name="value" onChange={(e)=>setValues(e.target.value)} />
+                        <FormControl aria-label="Last name" className="m-20" name="value" value={values} onChange={(e)=>setValues(e.target.value)} />
                     </InputGroup>                   
                     </div>
+                    <p className="des">You Can Add Multiple Key Value Pairs By clicking on Add Button</p>
+                </div>
                 }
             </div>
         </div>

@@ -1,13 +1,15 @@
 import React,{useState} from 'react';
 import { DropdownButton, Dropdown, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { changeMethod } from "../Actions";
+import { useDispatch } from 'react-redux'
 
 export const Header = () => {
-
+    const dispatch = useDispatch()
     const [method, setmethod] = useState("GET");
     const [url, seturl] = useState("")
 
     const handleClick=()=>{
-        seturl("")
+        dispatch(changeMethod(method));
     }
   
     return (
